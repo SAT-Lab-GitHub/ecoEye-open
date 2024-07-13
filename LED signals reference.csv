@@ -1,0 +1,12 @@
+LED color,duration,timing,indication,enable
+green,~1s flashing,USB connection,board powering up with USB,when powered by USB
+white,500 ms,after power on,firmware is ready,always (firmware-coded)
+white,3 × 300 ms ,initialising,script is starting,always
+blue,User-defined (default: 200 ms),User-defined period (default: 60 s),camera is running or sleeping,always
+yellow,image classification,every time an image is analysed with a neural network,image classification or object detection are being executed on an image,if indicators=True
+green,image saving,every time an image is saved,image is being saved,if indicators=True
+cyan,reference image saving,every time a new reference image is created,reference image is being blended. Only happens when doing frame differencing,if indicators=True
+red,1 s,sleep,camera goes to sleep,always
+red,2 × 500 ms,deep sleep,camera goes to deep sleep,always
+blue,1 s,waking,camera is waking up from sleep,always
+red+white,3 × ~200 ms ,script error,there is an error in the script,always (firmware-coded)
