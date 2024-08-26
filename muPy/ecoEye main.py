@@ -154,7 +154,7 @@ background_blend_level = 128
 # TODO give new variable name
 classify_mode = "none"
 
-# ⚊⚊⚊⚊⚊ calssify enabled only parameters ⚊⚊⚊⚊⚊
+# ⚊⚊⚊⚊⚊ classify enabled only parameters ⚊⚊⚊⚊⚊
 #absolute file paths to model and labels files stored on SD card. needs to start with backslash if file is in root
 net_path = "/trained.tflite"
 labels_path = "/labels.txt"
@@ -226,7 +226,7 @@ send_image = False
 send_differencing = False
 send_voltage = False
 #  ⚊⚊⚊⚊⚊ advanced setting ⚊⚊⚊⚊⚊
-# confidence above which the image is send over wifi
+# confidence above which the image is sent over wifi
 threshold_image = 0.5
 
 # ╋╋╋╋╋╋╋╋╋╋ 𝙀𝙉𝘿 𝙊𝙁 𝙐𝙎𝙀𝙍-𝘿𝙀𝙁𝙄𝙉𝙀𝘿 𝙋𝘼𝙍𝘼𝙈𝙀𝙏𝙀𝙍𝙎 ╋╋╋╋╋╋╋╋╋╋
@@ -425,7 +425,7 @@ LED_WHITE_BLINK(200,3)
 night_time_check = not solartime.is_daytime()
 # Reset and initialize the sensor
 sensor.reset()
-#we need RGB565 for frame differencing and mobilenet
+#we need RGB565 for frame differencing and MobileNet
 sensor.set_pixformat(sensor_pixformat)
 # Set frame size
 sensor.set_framesize(sensor_framesize)
@@ -461,7 +461,7 @@ if(not use_roi and MODE != 0):
 #adjusting exposure
 # at night, turn ON selected illumination LEDs if not always OFF mode
 if(LED_mode_night != "off" and night_time_check and LED_status == False):
-    print("Turning illumination LEDs ON for exposure adjustement")
+    print("Turning illumination LEDs ON for exposure adjustment")
     if(LED_select == 'module'):
         print("Warming up LED module for",LED_module_warmup/1000,"seconds.")
         light.pulse_width_percent(LED_module_PWM)
@@ -490,7 +490,7 @@ if(fd_enable):
                   ',' + str(sensor.get_gain_db()) + ',' + "NA" + ',' + "reference" + '\n')
     print("Saved background image - now frame differencing!")
 
-# after exposure adjustement, turn OFF selected illumination LEDs if not always ON mode
+# after exposure adjustment, turn OFF selected illumination LEDs if not always ON mode
 if (LED_mode_night != "on" and LED_status == True):
     print("Turning illumination LEDs OFF to save power...")
     if(LED_select == 'module'):
@@ -516,7 +516,7 @@ while(True):
 
     # go to deep sleep when not operation time
     if(not solartime.is_operation_time()):
-        # outisde of operation time
+        # outside of operation time
         print("Outside operation time - current time:",time.localtime()[0:6])
         # before deep sleep, turn off illumination LEDs if on
         if(LED_status == True):
@@ -545,7 +545,7 @@ while(True):
 
     # turn ON illumination LED at night if always ON
     if(night_time_check and LED_mode_night == "on" and LED_status == False):
-        print("Turning illumination LEDs ON during nightime")
+        print("Turning illumination LEDs ON during nighttime")
         if(LED_select == 'module'):
             print("Warming up LED module for",LED_module_warmup/1000,"seconds.")
             light.pulse_width_percent(LED_module_PWM)
@@ -610,7 +610,7 @@ while(True):
     or (exposure_control!="auto" and (pyb.elapsed_millis(start_time_blending_ms) > 2*expose_period_s*1000))):
         # at night, turn ON selected illumination LEDs if not always OFF mode
         if(LED_mode_night != "off" and night_time_check and LED_status == False):
-            print("Turning illumination LEDs ON for exposure adjustement")
+            print("Turning illumination LEDs ON for exposure adjustment")
             if(LED_select == 'module'):
                 print("Warming up LED module for",LED_module_warmup/1000,"seconds.")
                 light.pulse_width_percent(LED_module_PWM)
@@ -644,7 +644,7 @@ while(True):
         #reset blending time counter
         start_time_blending_ms = pyb.millis()
 
-        # after exposure adjustement, turn OFF selected illumination LEDs if not always ON mode
+        # after exposure adjustment, turn OFF selected illumination LEDs if not always ON mode
         if (LED_mode_night != "on" and LED_status == True):
             print("Turning illumination LEDs OFF to save power...")
             if(LED_select == 'module'):
