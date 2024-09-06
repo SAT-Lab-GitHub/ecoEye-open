@@ -1,3 +1,6 @@
+#This script analyses the JPEGs present on the SD caard of the H7+ board, based on an image classification or object detection model.
+#Results are exported to a CSV and the loaded image files can be exported for diagnostics
+
 #import libraries
 import image, os, tf, pyb, math
 
