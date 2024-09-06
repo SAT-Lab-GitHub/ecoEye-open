@@ -1,4 +1,5 @@
-#this crops and exports images present on the board based on user-given coordinates
+#this generates image differences between a reference image and other JPEGs loaded on the SD caard
+#(useful for diagnostics in blob-detection workflows)
 
 #import libraries
 import sensor, image, time, os, pyb, machine, sys
