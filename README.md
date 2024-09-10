@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/828145800.svg)](https://zenodo.org/doi/10.5281/zenodo.13739560)
+
 Computer-assisted design (CAD) and electronic design automation (EDA) files, as well as micropython scripts (muPy) for building and running ecoEye, an embedded computer-vision camera for ecological applications.
 
 Detailed assembly instructions can be found in the [Wiki](https://github.com/SAT-Lab-GitHub/ecoEye-open/wiki).
